@@ -1,10 +1,22 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {FlatList, Text, View} from 'react-native';
 
-export const Results = () => {
+import {RenderItem} from './renderItem';
+import {EmptyMessage} from './emptyMessage';
+import {Props} from './interface';
+
+import styles from './styles';
+
+export const Results = ({bankList}: Props) => {
   return (
     <View>
-      <Text>Results</Text>
+      <Text style={styles.title}>Results</Text>
+      <FlatList
+        data={bankList}
+        renderItem={RenderItem}
+        keyExtractor={item => item.id.toString()}
+        ListEmptyComponent={EmptyMessage}
+      />
     </View>
   );
 };

@@ -52,7 +52,7 @@ export const Home = () => {
         setBankISO={setBankISO}
         searchBanks={searchBanks}
       />
-      <Results />
+      <Results bankList={bankList} />
     </View>
   );
 };
