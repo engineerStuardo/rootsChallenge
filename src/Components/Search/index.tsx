@@ -5,7 +5,7 @@ import {Props} from './interface';
 
 import styles from './styles';
 
-export const Search = ({setText, text, searchBanks}: Props) => {
+export const Search = ({setBankISO, bankISO, searchBanks}: Props) => {
   return (
     <View>
       <Text style={styles.title}>Please Enter ISO Country e.g. SV</Text>
@@ -13,10 +13,10 @@ export const Search = ({setText, text, searchBanks}: Props) => {
         <TextInput
           onChangeText={(textValue: string) => {
             if (textValue.length <= 2) {
-              setText(textValue.toUpperCase());
+              setBankISO(textValue.toUpperCase());
             }
           }}
-          value={text}
+          value={bankISO}
           style={styles.input}
         />
         <TouchableOpacity onPress={searchBanks} style={styles.button}>

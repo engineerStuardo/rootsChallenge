@@ -1,5 +1,5 @@
 export interface Props {
-  setText: React.Dispatch<React.SetStateAction<string>>;
-  text: string;
+  setBankISO: React.Dispatch<React.SetStateAction<string>>;
+  bankISO: string;
   searchBanks: () => void;
 }
